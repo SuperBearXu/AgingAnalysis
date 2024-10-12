@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.textEditLog.setGeometry(QtCore.QRect(9, 120, 761, 401))
         font = QtGui.QFont()
         font.setFamily("等线")
-        font.setPointSize(11)
+        font.setPixelSize(15)
         self.textEditLog.setFont(font)
         self.textEditLog.setStyleSheet("")
         self.textEditLog.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
