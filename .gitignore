@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
+# C etensions
 *.so
 
 # Distribution / packaging
@@ -170,5 +170,5 @@ dist/
 log/
 导出数据/
 表格/
-账龄分析工具 v1.0.spec
 
+*.xlsx
