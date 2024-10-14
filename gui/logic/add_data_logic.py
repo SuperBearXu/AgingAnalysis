@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QPushButton, QDialog, QVBoxLayout, QLineEdit, QLabel
 from PyQt5.QtGui import QFont
 
 from global_setting import GS
+from gui.common_style import font_16_family, set_window_icon
 from utils.my_logger import my_logger as logger
 
 global_temp_data = []
@@ -14,6 +15,7 @@ class AddDataDialog(QDialog):
         super().__init__()
         self.setWindowTitle("添加借贷数据")
         self.setWindowFlags(Qt.WindowCloseButtonHint)
+        set_window_icon(self)
         self.layout = QVBoxLayout()
 
         self.input_boxes = []  # 用于存储输入框对
@@ -24,17 +26,14 @@ class AddDataDialog(QDialog):
         self.add_button = QPushButton("新增借贷")
         self.add_button.clicked.connect(self.add_input_boxes)
 
-        # 设置按钮字体大小
-        font = QFont()
-        font.setPointSize(12)
-        self.add_button.setFont(font)
+        self.add_button.setFont(font_16_family)
 
         self.save_button = QPushButton("保存")
-        self.save_button.setFont(font)  # 设置保存按钮的字体大小
+        self.save_button.setFont(font_16_family)  # 设置保存按钮的字体大小
         self.save_button.clicked.connect(self.save_inputs)
 
         self.clear_button = QPushButton("清空输入")
-        self.clear_button.setFont(font)  # 设置清空按钮的字体大小
+        self.clear_button.setFont(font_16_family)  # 设置清空按钮的字体大小
         self.clear_button.clicked.connect(self.clear_inputs)
 
         self.layout.addWidget(self.add_button)

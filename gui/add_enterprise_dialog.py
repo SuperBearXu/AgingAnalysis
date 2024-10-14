@@ -9,6 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QIcon
+
+from utils.my_utils import get_icon
 
 
 class Ui_Dialog(object):
@@ -19,30 +22,20 @@ class Ui_Dialog(object):
         Dialog.setMaximumSize(QtCore.QSize(400, 195))
         self.label_enterprise_name = QtWidgets.QLabel(Dialog)
         self.label_enterprise_name.setGeometry(QtCore.QRect(50, 40, 71, 41))
-        font = QtGui.QFont()
-        font.setPixelSize(16)
-        self.label_enterprise_name.setFont(font)
+
         self.label_enterprise_name.setObjectName("label_enterprise_name")
         self.lineEdit_enterprise_name = QtWidgets.QLineEdit(Dialog)
         self.lineEdit_enterprise_name.setGeometry(QtCore.QRect(130, 50, 241, 21))
-        font = QtGui.QFont()
-        font.setPixelSize(16)
-        self.lineEdit_enterprise_name.setFont(font)
+
         self.lineEdit_enterprise_name.setText("")
         self.lineEdit_enterprise_name.setObjectName("lineEdit_enterprise_name")
         self.button_add_enterprise = QtWidgets.QPushButton(Dialog)
         self.button_add_enterprise.setGeometry(QtCore.QRect(90, 120, 91, 41))
-        font = QtGui.QFont()
-        font.setFamily("等线")
-        font.setPixelSize(15)
-        self.button_add_enterprise.setFont(font)
+
         self.button_add_enterprise.setObjectName("button_add_enterprise")
         self.button_save_and_close = QtWidgets.QPushButton(Dialog)
         self.button_save_and_close.setGeometry(QtCore.QRect(220, 120, 91, 41))
-        font = QtGui.QFont()
-        font.setFamily("等线")
-        font.setPixelSize(15)
-        self.button_save_and_close.setFont(font)
+
         self.button_save_and_close.setObjectName("button_save_and_close")
 
         self.retranslateUi(Dialog)
@@ -52,5 +45,5 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "添加企业"))
         self.label_enterprise_name.setText(_translate("Dialog", "单位名称:"))
-        self.button_add_enterprise.setText(_translate("Dialog", "继续添加"))
-        self.button_save_and_close.setText(_translate("Dialog", "保存并关闭"))
+        self.button_add_enterprise.setText(_translate("Dialog", "保存"))
+        self.button_save_and_close.setText(_translate("Dialog", "关闭"))

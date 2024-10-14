@@ -1,10 +1,14 @@
+import base64
 import os
 import shutil
 import time
 from datetime import datetime, timedelta
 
 import openpyxl
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QDialog
 
+from my_icon import icon_bytes
 from utils.my_logger import my_logger as logger
 
 
@@ -159,3 +163,11 @@ def copy_and_rename_file(source_path, destination_dir, new_file_name):
     except Exception as e:
         print(f"复制文件时发生错误: {e}")
         return None
+
+
+# 图标bytes转成pixmap格式
+def get_icon():
+    icon_img = base64.b64decode(icon_bytes)  # 解码
+    icon_pixmap = QPixmap()  # 新建QPixmap对象
+    icon_pixmap.loadFromData(icon_img)  # 往QPixmap中写入数据
+    return icon_pixmap

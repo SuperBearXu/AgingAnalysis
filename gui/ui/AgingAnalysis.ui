@@ -66,10 +66,10 @@
    <widget class="QPushButton" name="button_add_enterprise">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>30</y>
+      <x>40</x>
+      <y>40</y>
       <width>91</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -79,10 +79,10 @@
    <widget class="QPushButton" name="button_add_data">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>30</y>
-      <width>91</width>
-      <height>61</height>
+      <x>300</x>
+      <y>40</y>
+      <width>81</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -92,10 +92,10 @@
    <widget class="QPushButton" name="button_start_analysis">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>30</y>
-      <width>91</width>
-      <height>61</height>
+      <x>420</x>
+      <y>40</y>
+      <width>81</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -105,10 +105,10 @@
    <widget class="QPushButton" name="button_export_excel">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>30</y>
-      <width>91</width>
-      <height>61</height>
+      <x>540</x>
+      <y>40</y>
+      <width>81</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -118,14 +118,27 @@
    <widget class="QPushButton" name="button_click_refresh">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>30</y>
-      <width>91</width>
-      <height>61</height>
+      <x>660</x>
+      <y>40</y>
+      <width>81</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>一键清空</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_add_enterprise_batch">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>批量添加</string>
     </property>
    </widget>
   </widget>

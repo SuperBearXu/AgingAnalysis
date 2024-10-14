@@ -51,10 +51,17 @@ def calculate_aging(data):
             over_three_sum += int(last_list[i])
             continue
         excel_list.append(last_list[i])
-    if len(last_list) > 3:
-        excel_list.append(str(over_three_sum))
-    else:
-        excel_list.append('-')
+    len_last_list = len(last_list)
+    while True:
+        if len(last_list) < 3:
+            excel_list.append('-')
+            last_list.append('-')
+        elif len(last_list) >= 3 > len_last_list:
+            excel_list.append('-')
+            break
+        elif len(last_list) >= 3:
+            excel_list.append(str(over_three_sum))
+            break
     # logger.info(f"{enterprise} 最终Excel导出结果为：{excel_list}")
     # sum_excel_row = sum(map(int, excel_list))
     # 过滤并转换列表中的元素
@@ -66,7 +73,7 @@ def calculate_aging(data):
     # print("sum_excel_row", sum_excel_row)
     excel_list.append(str(sum_excel_row))
     excel_list.insert(0, enterprise)
-    logger.info(f"{enterprise} 返回结果为：{excel_list}")
+    # logger.info(f"{enterprise} 返回结果为：{excel_list}")
     return excel_list
 
 

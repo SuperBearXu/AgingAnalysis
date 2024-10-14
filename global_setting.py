@@ -20,8 +20,8 @@ class GlobalSetting:
         create_folder_if_not_exists(self.path_config)
         create_folder_if_not_exists(self.path_export)
 
-        today = get_current_date()
-        self.excel_name = f'{self.path_export}\\{today}应收账款账龄分析表.xlsx'
+    def set_excel_name(self, excel_name):
+        self.excel_name = f'{self.path_export}\\{excel_name}.xlsx'
 
 
 GS = GlobalSetting()

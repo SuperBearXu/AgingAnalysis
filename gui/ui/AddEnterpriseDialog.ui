@@ -77,7 +77,7 @@
     </font>
    </property>
    <property name="text">
-    <string>继续添加</string>
+    <string>保存</string>
    </property>
   </widget>
   <widget class="QPushButton" name="button_save_and_close">
@@ -96,7 +96,7 @@
     </font>
    </property>
    <property name="text">
-    <string>保存并关闭</string>
+    <string>关闭</string>
    </property>
   </widget>
  </widget>

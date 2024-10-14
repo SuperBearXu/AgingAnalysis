@@ -146,8 +146,10 @@ if __name__ == "__main__":
     # window = MainWindow()
     # window.show()
     # sys.exit(app.exec_())
-    excel_list = ['-94', '0', '0', '-']
+    excel_list = ['0', '0']
     # valid_numbers = [int(num) for num in excel_list]
     valid_numbers = [int(num) if num.replace('-', '', 1).isdigit() else 0 for num in excel_list]
     sum_excel_row = sum(valid_numbers)
-    print(sum_excel_row)
+    excel_list.append(str(sum_excel_row))
+    excel_list.insert(0, "enterprise")
+    print(excel_list)
