@@ -29,10 +29,10 @@
    <widget class="QPlainTextEdit" name="textEditLog">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>120</y>
-      <width>761</width>
-      <height>401</height>
+      <x>170</x>
+      <y>10</y>
+      <width>601</width>
+      <height>511</height>
      </rect>
     </property>
     <property name="font">
@@ -66,8 +66,8 @@
    <widget class="QPushButton" name="button_add_enterprise">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>40</y>
+      <x>200</x>
+      <y>30</y>
       <width>91</width>
       <height>51</height>
      </rect>
@@ -79,36 +79,36 @@
    <widget class="QPushButton" name="button_add_data">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>40</y>
-      <width>81</width>
-      <height>51</height>
+      <x>30</x>
+      <y>20</y>
+      <width>101</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>添加数据</string>
+     <string>导入数据</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button_start_analysis">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>40</y>
-      <width>81</width>
-      <height>51</height>
+      <x>30</x>
+      <y>130</y>
+      <width>101</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>开始分析</string>
+     <string>生成Excel</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button_export_excel">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>40</y>
-      <width>81</width>
-      <height>51</height>
+      <x>210</x>
+      <y>320</y>
+      <width>71</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -118,10 +118,10 @@
    <widget class="QPushButton" name="button_click_refresh">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>40</y>
-      <width>81</width>
-      <height>51</height>
+      <x>200</x>
+      <y>190</y>
+      <width>101</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
@@ -131,16 +131,37 @@
    <widget class="QPushButton" name="button_add_enterprise_batch">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>40</y>
-      <width>91</width>
-      <height>51</height>
+      <x>200</x>
+      <y>90</y>
+      <width>101</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>批量添加</string>
+     <string>导入企业</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>410</y>
+      <width>121</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>账龄分析工具</string>
+    </property>
+   </widget>
+   <zorder>button_click_refresh</zorder>
+   <zorder>button_add_enterprise_batch</zorder>
+   <zorder>button_add_enterprise</zorder>
+   <zorder>button_export_excel</zorder>
+   <zorder>textEditLog</zorder>
+   <zorder>button_add_data</zorder>
+   <zorder>button_start_analysis</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

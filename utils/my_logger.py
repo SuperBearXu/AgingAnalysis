@@ -1,16 +1,16 @@
-import os
-from datetime import datetime
-
 from loguru import logger
 
 
 class GlobalLogger:
-    def __init__(self):
+    def __init__(self, log_file_path):
         # 当前文件的目录路径
         self.signal_log = None
+        self.log_file_path = log_file_path
         self.init_logger()
 
     def init_logger(self):
+        logger.add(self.log_file_path, format="{time:YYYY-MM-D HH:mm:ss} | {level} | {message}", rotation="10MB",
+                   level="DEBUG", backtrace=True, diagnose=True, )
         logger.add(self.emit_log, format="{time:YYYY-MM-D HH:mm:ss} | {level} | {message}", level="INFO")
 
     def bind_signal(self, signal_log):
@@ -21,5 +21,7 @@ class GlobalLogger:
         self.signal_log.emit(log)
 
 
-gl = GlobalLogger()
+# f'{self.current_path}\\log'
+
+# gl = GlobalLogger(f"{GS.path_log}\\日志.log")
 my_logger = logger

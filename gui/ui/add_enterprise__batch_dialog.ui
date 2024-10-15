@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AddEnterpriseBatchDialog</class>
- <widget class="QDialog" name="AddEnterpriseBatchDialog">
+ <class>AddBatchDialog</class>
+ <widget class="QDialog" name="AddBatchDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,9 +11,9 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>批量导入企业</string>
+   <string>add_batch_dialog</string>
   </property>
-  <widget class="QPlainTextEdit" name="text_edit_add_enterprise_batch">
+  <widget class="QPlainTextEdit" name="text_edit_add_batch">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -22,8 +22,11 @@
      <height>251</height>
     </rect>
    </property>
+   <property name="lineWrapMode">
+    <enum>QPlainTextEdit::NoWrap</enum>
+   </property>
   </widget>
-  <widget class="QPushButton" name="button_add_enterprise_batch">
+  <widget class="QPushButton" name="button_add_batch">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -33,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>确认录入</string>
+    <string>确认导入</string>
    </property>
   </widget>
  </widget>

@@ -51,6 +51,10 @@ def open_file(path_file):
         logger.error(f"文件打开失败,{str(e)}")
 
 
+def get_time_now():
+    return time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())
+
+
 def get_current_date():
     now = datetime.now()
     current_date = now.date()
@@ -171,3 +175,7 @@ def get_icon():
     icon_pixmap = QPixmap()  # 新建QPixmap对象
     icon_pixmap.loadFromData(icon_img)  # 往QPixmap中写入数据
     return icon_pixmap
+
+
+if __name__ == '__main__':
+    print(get_time_now())

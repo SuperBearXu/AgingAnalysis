@@ -22,3 +22,12 @@ accounts receivable aging schedule 应收账款账龄分析表
 f'--icon={icon_name}',
 '--add-data=D:\xxx\xxx\xxx\xxx\my_icon.ico;.',
 ````
+
+相关命令：<br>
+````
+主界面
+pyuic5 -o .\gui\main_gui.py .\gui\ui\AgingAnalysis.ui
+
+批量导入界面
+pyuic5 -o .\gui\add_enterprise_batch_dialog.py .\gui\ui\add_enterprise__batch_dialog.ui
+````

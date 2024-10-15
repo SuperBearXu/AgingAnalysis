@@ -11,21 +11,22 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_AddEnterpriseBatchDialog(object):
-    def setupUi(self, AddEnterpriseBatchDialog):
-        AddEnterpriseBatchDialog.setObjectName("AddEnterpriseBatchDialog")
-        AddEnterpriseBatchDialog.resize(470, 329)
-        self.text_edit_add_enterprise_batch = QtWidgets.QPlainTextEdit(AddEnterpriseBatchDialog)
-        self.text_edit_add_enterprise_batch.setGeometry(QtCore.QRect(10, 10, 451, 251))
-        self.text_edit_add_enterprise_batch.setObjectName("text_edit_add_enterprise_batch")
-        self.button_add_enterprise_batch = QtWidgets.QPushButton(AddEnterpriseBatchDialog)
-        self.button_add_enterprise_batch.setGeometry(QtCore.QRect(190, 270, 91, 51))
-        self.button_add_enterprise_batch.setObjectName("button_add_enterprise_batch")
+class Ui_AddBatchDialog(object):
+    def setupUi(self, AddBatchDialog):
+        AddBatchDialog.setObjectName("AddBatchDialog")
+        AddBatchDialog.resize(470, 329)
+        self.text_edit_add_batch = QtWidgets.QPlainTextEdit(AddBatchDialog)
+        self.text_edit_add_batch.setGeometry(QtCore.QRect(10, 10, 451, 251))
+        self.text_edit_add_batch.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
+        self.text_edit_add_batch.setObjectName("text_edit_add_batch")
+        self.button_add_batch = QtWidgets.QPushButton(AddBatchDialog)
+        self.button_add_batch.setGeometry(QtCore.QRect(190, 270, 91, 51))
+        self.button_add_batch.setObjectName("button_add_batch")
 
-        self.retranslateUi(AddEnterpriseBatchDialog)
-        QtCore.QMetaObject.connectSlotsByName(AddEnterpriseBatchDialog)
+        self.retranslateUi(AddBatchDialog)
+        QtCore.QMetaObject.connectSlotsByName(AddBatchDialog)
 
-    def retranslateUi(self, AddEnterpriseBatchDialog):
+    def retranslateUi(self, AddBatchDialog):
         _translate = QtCore.QCoreApplication.translate
-        AddEnterpriseBatchDialog.setWindowTitle(_translate("AddEnterpriseBatchDialog", "批量导入企业"))
-        self.button_add_enterprise_batch.setText(_translate("AddEnterpriseBatchDialog", "确认录入"))
+        AddBatchDialog.setWindowTitle(_translate("AddBatchDialog", "add_batch_dialog"))
+        self.button_add_batch.setText(_translate("AddBatchDialog", "确认导入"))

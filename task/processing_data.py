@@ -5,9 +5,9 @@ import pandas as pd
 from openpyxl.styles import Alignment, PatternFill, Border, Side
 
 from global_setting import GS
-from gui.logic.add_data_logic import global_temp_data
+from gui.logic.import_data_dialog_logic import global_temp_data
 from utils.my_logger import my_logger as logger
-from utils.my_utils import data_frame_add_title, open_file, check_file_exists
+from utils.my_utils import data_frame_add_title, open_file, check_file_exists, get_time_now
 
 
 def calculate_aging(data):
@@ -42,7 +42,7 @@ def calculate_aging(data):
             break
 
     last_list = list(reversed(list_debit))
-    logger.info(f"{enterprise} 最终分析结果为：{last_list}")
+    logger.debug(f"{enterprise} 最终分析结果为：{last_list}")
 
     excel_list = []
     over_three_sum = 0
@@ -93,6 +93,20 @@ def data_to_excel(data):
         over_three_list.append(d[4])
         sum_list.append(d[5])
 
+    last_enterprise = "合计"
+    last_one_years = sum(map(int, one_years_list))
+    last_two_years = sum(map(int, two_years_list))
+    last_three_years = sum(map(int, three_years_list))
+    last_over_three = sum(map(int, over_three_list))
+    last_sum = sum(map(int, sum_list))
+
+    enterprise_list.append(last_enterprise)
+    one_years_list.append(last_one_years)
+    two_years_list.append(last_two_years)
+    three_years_list.append(last_three_years)
+    over_three_list.append(last_over_three)
+    sum_list.append(last_sum)
+
     data_frame = {
         '单位名称': enterprise_list,
         '一年内': one_years_list,
@@ -129,12 +143,15 @@ def data_to_excel(data):
 
 def analysis_data():
     if len(global_temp_data) == 0:
-        logger.info("当前未添加借贷数据，请先添加数据后再尝试分析！")
-
+        logger.info("当前未导入借贷数据，请先添加数据后再次点击！")
+        return
     excel_data = []
     for data in global_temp_data:
         excel_data.append(calculate_aging(data))
+    now = get_time_now()
+    GS.set_excel_name(now)
     data_to_excel(excel_data)
+    open_excel()
 
 
 def open_excel():
