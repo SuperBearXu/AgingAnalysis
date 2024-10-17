@@ -2,6 +2,7 @@ import threading
 
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QDialog, QMessageBox
+from qfluentwidgets import Dialog
 
 from global_setting import GS
 from gui.common_style import font_15_family, set_window_icon
@@ -43,32 +44,32 @@ class MainGuiLogic(QObject, Ui_MainWindow):
         self.label.setText(VERSION)
 
     def connect_signal(self):
-        self.button_add_enterprise.clicked.connect(self.open_dialog_add_enterprise)
-        self.button_add_enterprise_batch.clicked.connect(self.open_dialog_add_enterprise_batch)
+        # self.button_add_enterprise.clicked.connect(self.open_dialog_add_enterprise)
+        # self.button_add_enterprise_batch.clicked.connect(self.open_dialog_add_enterprise_batch)
         self.button_add_data.clicked.connect(self.open_dialog_import_data)
         self.button_start_analysis.clicked.connect(self.open_dialog_check_excel_name)
-        self.button_export_excel.clicked.connect(self.export_excel)
+        # self.button_export_excel.clicked.connect(self.export_excel)
         # self.button_click_refresh.clicked.connect(self.delete_all_data)
 
         GS.gl.bind_signal(self.signal_log)
         self.signal_log.connect(self.send_textEditLog_log)
 
-    def open_dialog_add_enterprise(self):
-        dialog = QDialog()
-        # ui_dialog = Ui_Dialog()
-        # ui_dialog.setupUi(self.dialog)
-        ui_dialog = AddEnterpriseDialogLogic(dialog)
-        dialog.show()
-        dialog.exec_()  # 显示对话框并阻塞，直到关闭
+    # def open_dialog_add_enterprise(self):
+    #     dialog = QDialog()
+    #     # ui_dialog = Ui_Dialog()
+    #     # ui_dialog.setupUi(self.dialog)
+    #     ui_dialog = AddEnterpriseDialogLogic(dialog)
+    #     dialog.show()
+    #     dialog.exec_()  # 显示对话框并阻塞，直到关闭
 
-    def open_dialog_add_enterprise_batch(self):
-        dialog = QDialog()
-        ui_dialog = AddEnterpriseBatchDialogLogic(dialog)
-        dialog.exec_()
+    # def open_dialog_add_enterprise_batch(self):
+    #     dialog = QDialog()
+    #     ui_dialog = AddEnterpriseBatchDialogLogic(dialog)
+    #     dialog.exec_()
 
-    def open_dialog_add_data(self):
-        dialog = AddDataDialog()
-        dialog.exec_()  # 显示对话框并阻塞，直到关闭
+    # def open_dialog_add_data(self):
+    #     dialog = AddDataDialog()
+    #     dialog.exec_()  # 显示对话框并阻塞，直到关闭
 
     def open_dialog_import_data(self):
         dialog = QDialog()
@@ -90,16 +91,16 @@ class MainGuiLogic(QObject, Ui_MainWindow):
             logger.error(f"分析失败：{e}")
             QMessageBox.information(None, "提示", "分析失败，请重试！")
 
-    def export_excel(self):
-        if not GS.excel_name:
-            QMessageBox.information(None, "提示", "当前未设置表格名称，请先设置表格名称后再进行导出！")
-            return
-        if not check_file_exists(GS.excel_name):
-            QMessageBox.information(None, "提示", "当前未生成相关表格，请添加数据后再进行导出！")
-            return
-        # 启动分析线程
-        excel_thread = threading.Thread(target=open_excel)
-        excel_thread.start()
+    # def export_excel(self):
+    #     if not GS.excel_name:
+    #         QMessageBox.information(None, "提示", "当前未设置表格名称，请先设置表格名称后再进行导出！")
+    #         return
+    #     if not check_file_exists(GS.excel_name):
+    #         QMessageBox.information(None, "提示", "当前未生成相关表格，请添加数据后再进行导出！")
+    #         return
+    #     # 启动分析线程
+    #     excel_thread = threading.Thread(target=open_excel)
+    #     excel_thread.start()
 
     # def delete_all_data(self):
     #     try:

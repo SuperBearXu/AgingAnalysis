@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\gui\ui\add_enterprise__batch_dialog.ui'
+# Form implementation generated from reading ui file '.\gui\ui\add_batch_dialog.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -19,7 +19,7 @@ class Ui_AddBatchDialog(object):
         self.text_edit_add_batch.setGeometry(QtCore.QRect(10, 10, 451, 251))
         self.text_edit_add_batch.setLineWrapMode(QtWidgets.QPlainTextEdit.NoWrap)
         self.text_edit_add_batch.setObjectName("text_edit_add_batch")
-        self.button_add_batch = QtWidgets.QPushButton(AddBatchDialog)
+        self.button_add_batch = PushButton(AddBatchDialog)
         self.button_add_batch.setGeometry(QtCore.QRect(190, 270, 91, 51))
         self.button_add_batch.setObjectName("button_add_batch")
 
@@ -30,3 +30,4 @@ class Ui_AddBatchDialog(object):
         _translate = QtCore.QCoreApplication.translate
         AddBatchDialog.setWindowTitle(_translate("AddBatchDialog", "add_batch_dialog"))
         self.button_add_batch.setText(_translate("AddBatchDialog", "确认导入"))
+from qfluentwidgets import PushButton

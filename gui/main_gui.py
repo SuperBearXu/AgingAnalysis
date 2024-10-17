@@ -36,10 +36,10 @@ class Ui_MainWindow(object):
         self.button_add_enterprise = QtWidgets.QPushButton(self.centralwidget)
         self.button_add_enterprise.setGeometry(QtCore.QRect(200, 30, 91, 51))
         self.button_add_enterprise.setObjectName("button_add_enterprise")
-        self.button_add_data = QtWidgets.QPushButton(self.centralwidget)
+        self.button_add_data = PrimaryPushButton(self.centralwidget)
         self.button_add_data.setGeometry(QtCore.QRect(30, 20, 101, 61))
         self.button_add_data.setObjectName("button_add_data")
-        self.button_start_analysis = QtWidgets.QPushButton(self.centralwidget)
+        self.button_start_analysis = PushButton(self.centralwidget)
         self.button_start_analysis.setGeometry(QtCore.QRect(30, 130, 101, 61))
         self.button_start_analysis.setObjectName("button_start_analysis")
         self.button_export_excel = QtWidgets.QPushButton(self.centralwidget)
@@ -80,3 +80,4 @@ class Ui_MainWindow(object):
         self.button_click_refresh.setText(_translate("MainWindow", "一键清空"))
         self.button_add_enterprise_batch.setText(_translate("MainWindow", "导入企业"))
         self.label.setText(_translate("MainWindow", "账龄分析工具"))
+from qfluentwidgets import PrimaryPushButton, PushButton

@@ -23,7 +23,6 @@ class GlobalSetting:
         # create_folder_if_not_exists(self.path_config)
         create_folder_if_not_exists(self.path_export)
 
-
     def set_excel_name(self, excel_name):
         self.excel_name = f'{self.path_export}\\{excel_name}.xlsx'
 

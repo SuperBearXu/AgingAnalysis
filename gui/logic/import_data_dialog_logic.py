@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QMessageBox, QWidget
 
 from global_setting import GS
-from gui.add_enterprise_batch_dialog import Ui_AddBatchDialog
+from gui.add_batch_dialog import Ui_AddBatchDialog
 from gui.common_style import font_16_family, font_15_family, set_window_icon
 from utils.my_logger import my_logger as logger
 

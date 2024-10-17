@@ -142,16 +142,21 @@ def data_to_excel(data):
 
 
 def analysis_data():
-    if len(global_temp_data) == 0:
-        logger.info("当前未导入借贷数据，请先添加数据后再次点击！")
+    try:
+        if len(global_temp_data) == 0:
+            logger.info("当前未导入借贷数据，请先添加数据后再次点击！")
+            return
+        excel_data = []
+        for data in global_temp_data:
+            excel_data.append(calculate_aging(data))
+        now = get_time_now()
+        GS.set_excel_name(now)
+        data_to_excel(excel_data)
+        open_excel()
+    except Exception as e:
+        logger.error(f"分析失败：{e}")
         return
-    excel_data = []
-    for data in global_temp_data:
-        excel_data.append(calculate_aging(data))
-    now = get_time_now()
-    GS.set_excel_name(now)
-    data_to_excel(excel_data)
-    open_excel()
+
 
 
 def open_excel():

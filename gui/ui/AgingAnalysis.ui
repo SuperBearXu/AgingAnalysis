@@ -76,7 +76,7 @@
      <string>添加企业</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="button_add_data">
+   <widget class="PrimaryPushButton" name="button_add_data">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -89,7 +89,7 @@
      <string>导入数据</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="button_start_analysis">
+   <widget class="PushButton" name="button_start_analysis">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -165,6 +165,18 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PrimaryPushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
